@@ -1,3 +1,4 @@
+import { FormatDate } from '@/lib/formatDate';
 import { Credit } from '@/types/credit';
 import Image from 'next/image';
 import React from 'react';
@@ -66,11 +67,7 @@ export default function CreditCard({
                     <div className="flex justify-between">
                         <span className="text-gray-700">Próximo pago</span>
                         <span className="font-medium text-[#2c3e50]">
-                            {new Date(installment_due).toLocaleDateString('es-ES', {
-                                day: 'numeric',
-                                month: 'short',
-                                year: 'numeric'
-                            })}
+                            {FormatDate(installment_due)}
                         </span>
                     </div>
                 </div>
